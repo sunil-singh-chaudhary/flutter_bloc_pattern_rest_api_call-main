@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_api_call/ProfileModel.dart';
-import 'package:flutter_bloc_api_call/profile_bloc.dart';
+import 'package:flutter_bloc_api_call/profile/ProfileModel.dart';
+import 'package:flutter_bloc_api_call/profile/profile_bloc.dart';
+import 'package:flutter_bloc_api_call/profile/profile_event.dart';
+import 'package:flutter_bloc_api_call/profile/profile_state.dart';
+import 'package:flutter_bloc_api_call/testblock/NewTestHomePage.dart';
+import 'package:flutter_bloc_api_call/testblock/bloc/testbloc_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +20,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => ProfileBloc(),
+          //   create: (context) => TestblocBloc(),
         ),
       ],
       child: MaterialApp(
@@ -23,7 +28,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const MyHomePage(title: 'Flutter BLoC Api Call'),
+        home: MyHomePage(title: "Flutter api call bloc"),
       ),
     );
   }

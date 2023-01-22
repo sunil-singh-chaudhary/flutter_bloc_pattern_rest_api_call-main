@@ -1,4 +1,5 @@
-part of 'profile_bloc.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc_api_call/profile/ProfileModel.dart';
 
 abstract class ProfileState extends Equatable {
   const ProfileState();
@@ -16,7 +17,6 @@ class ProfileLoading extends ProfileState {
 
 class ProfileSuccess extends ProfileState {
   final List<ProfileModel> Listmodel;
-
   ProfileSuccess(this.Listmodel);
 
   @override
